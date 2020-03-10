@@ -1,0 +1,23 @@
+{
+  "question": "Java",
+  "code": "class Program {static void Main(string[] args){var a=null;a=10;Console.WriteLine(a);Console.ReadLine();}}",
+  "answers": [
+      {
+          "answerNumber": 1,
+          "answerText": "0"
+      },
+      {
+          "answerNumber": 2,
+          "answerText": "10"
+      },
+      {
+          "answerNumber": 3,
+          "answerText": "Пустая строка"
+      },
+      {
+          "answerNumber": 4,
+          "answerText": "Возникнет ошибка на этапе компиляции"
+      }
+  ],
+  "rightAnswer": 4
+}

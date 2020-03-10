@@ -1,0 +1,137 @@
+{
+  "/users": {
+    "get": {
+      "tags": ["Users"],
+      "summary": "Get all users in system",
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/Users"
+          }
+        }
+      }
+    }
+  },
+  "/users/{id}": {
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "ID of the cat that we want to match",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": ["Users"],
+      "summary": "Get user with given ID",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "User with id",
+          "schema": {
+            "$ref": "#/definitions/id"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "404": {
+          "description": "Failed. User not found."
+        }
+      }
+    },
+    "put": {
+      "summary": "Update user with given ID",
+      "tags": ["Users"],
+      "requestBody": {
+        "description": "User Object",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "User with new values of properties",
+          "schema": {
+            "$ref": "#/definitions/id"
+          }
+        },
+        {
+          "in": "path",
+          "name": "languageId",
+          "required": true,
+          "description": "Language with new values of properties",
+          "schema": {
+            "$ref": "#/definitions/languageId"
+          }
+        },
+        {
+          "in": "path",
+          "name": "languageId",
+          "required": true,
+          "description": "Language with new values of properties",
+          "schema": {
+            "$ref": "#/definitions/languageId"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "400": {
+          "description": "Failed. Bad post data."
+        },
+        "404": {
+          "description": "Failed. User not found."
+        }
+      }
+    },
+    "delete": {
+      "summary": "Delete user with given ID",
+      "tags": ["Users"],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "Delete User with id",
+          "schema": {
+            "$ref": "#/definitions/id"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/id"
+          }
+        },
+        "404": {
+          "description": "Failed. User not found."
+        }
+      }
+    }
+  }
+}
